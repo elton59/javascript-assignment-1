@@ -12,38 +12,19 @@
 
  </div>
 
- <h1 style="color:red;text-align:center">Students Fees</h1>
+ <h1 style="color:red;text-align:center" id="header4">Students Fees</h1>
  <button class="button-primary"    onclick="color('blue')" >Click To Change Header color</button>
-<div style="overflow-x:auto;margin-bottom: 400px;">
+<div class="table-wrapper">
  <table id="students">
    <tr>
     
      <th id="header">Student Name</th>
      <th id="header2" >StudentID</th>
      <th id="header3" >Fees Paid</th>
-   </div>
-   </tr>
-   <tr>
-     <td>John Elton</td>
-     <td>2022CS150001</td>
-     <td>21000</td>
-   </tr>
-   <tr>
-      <td>Musyoka Mike</td>
-      <td>2022CS150002</td>
-     <td>21000</td>
-   </tr>
-   <tr>
-      <td>Winnie Mkenya</td>  
-      <td>2022CS150003</td>
-     <td>21000</td>
-   </tr>
-   <tr>
-      <td>Anne Mkenya</td>  
-      <td>2022CS150004</td>
-     <td>21000</td>
-   </tr>
-  
+
+   <tbody id="tableData"></tbody>
+   
+   
  </table>
 
 </div>
@@ -54,12 +35,49 @@
  <script>
 
   
- 
+var student = [
+        {
+            name: "John Elton Okoth",
+            studentid:"2022CS150295",
+            fee: 123456
+        },
+        {
+            name: "Mary Anne",
+            studentid:"2022CS150296",
+            fee: 23456765
+        },
+        {
+            name: "Malcom X",
+            studentid:  "2022CS150297",
+            fee: 324356
+        },
+        {
+            name: "Steve Jobs",
+            studentid:"2022CS150298",
+            fee: 56767758
+        },
+        {
+            name: "mike Tyson",
+            studentid:  "2022CS150299",
+            fee: 5467765
+        }
+    ];
+    var k = '<tbody>'
+    for(i = 0;i < student.length; i++){
+        k+= '<tr>';
+        k+= '<td>' + student[i].name + '</td>';
+        k+= '<td>' + student[i].studentid + '</td>';
+        k+= '<td>' + student[i].fee + '</td>';
+        k+= '</tr>';
+    }
+    k+='</tbody>';
+    document.getElementById('tableData').innerHTML = k;
 
 function color(col){
 document.getElementById("header").style.backgroundColor=col;
 document.getElementById("header2").style.backgroundColor=col;
 document.getElementById("header3").style.backgroundColor=col;
+document.getElementById("header4").style.color=col;
 alert("sucess");
 }
      
